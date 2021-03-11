@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssh-nuke-depoyment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ssh-nuke-app
+  template:
+    metadata:
+      labels:
+        app: ssh-nuke-app
+    spec:
+      containers:
+        - name: ssh-nuke-app
+          image: pimpbot9000/ssh-nuke-app:latest
