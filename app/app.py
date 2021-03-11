@@ -15,7 +15,6 @@ if __name__ == "__main__":
     from waitress import serve
     host = "0.0.0.0"
     port = 8080
-    print('Server started in port {port}'.format(port=port))
-    app.logger.info('Server started at %s:%s', host, port)
+    print('Server started in port {port}'.format(port=port))    
     serve(app, host=host, port=port)
     
