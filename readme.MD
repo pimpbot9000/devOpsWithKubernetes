@@ -2,16 +2,15 @@
 
 ## stardate 10.3.2021: Exercise 1.01
 
-See folder ```/exercise1_01```.
+See folder [/exercise1_01](exercise1_01).
 
 ## stardate 11.3.2021: Exercise 1.02: Project v0.1
 
-The app found in ```/app``` in this repo.
+The app is found in folder [/app](app) of this repo.
 
 ## stardate 11.3.2021: Exercise 1.03 & 1.04
 
-Manifest can be found in ```/app/manifests/delpoyment.yaml```
-
+The manifest-file: [/app/manifests/manifest.yaml](app/manifests/deployment.yaml)
 
 ## startdate 11.3.2021: Exercise 1.05
 
@@ -20,7 +19,7 @@ Create the cluster
 > k3d cluster create -a 2
 ```
 
-Deploy the app (See ```/app/manifests/deployment.yaml```. The app exposes port 8080)
+Deploy the app (See [deployment.yaml](app/manifests/deployment.yaml). The app exposes port 8080)
 ```
 > kubectl apply -f manifests/deployment.yaml
 ```
