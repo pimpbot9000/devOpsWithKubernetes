@@ -12,6 +12,7 @@ The app found in ```/app``` in this repo.
 
 Manifest can be found in ```/app/manifests/delpoyment.yaml```
 
+
 ## startdate 11.3.2021: Exercise 1.05
 
 Create the cluster
