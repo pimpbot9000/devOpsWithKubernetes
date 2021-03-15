@@ -1,0 +1,17 @@
+# A ClusterIP type Service resource gives the Service an 
+# internal IP that'll be accessible in the cluster.
+
+# Works on layer 4 (transport, TCP)
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssh-nuke-service
+spec:
+  type: ClusterIP
+  selector:
+    app: ssh-nuke-app
+  ports:
+    - port: 2345
+      protocol: TCP
+      targetPort: 8080

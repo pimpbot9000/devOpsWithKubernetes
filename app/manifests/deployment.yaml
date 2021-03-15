@@ -4,7 +4,7 @@ metadata:
   name: ssh-nuke-deployment
 
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: ssh-nuke-app
@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: ssh-nuke-app
-          image: pimpbot9000/ssh-nuke-app:11-3-2021-15-38
+          image: pimpbot9000/ssh-nuke-app:ubuntu        
