@@ -1,2 +1,4 @@
 pycache
 venv
+app/venv
+pong-app/venv

@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pong-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /mypath
+        backend:
+          serviceName: pong-service
+          servicePort: 3456

@@ -1,0 +1,17 @@
+# A ClusterIP type Service resource gives the Service an 
+# internal IP that'll be accessible in the cluster.
+
+# Works on layer 4 (transport, TCP)
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pong-service
+spec:
+  type: ClusterIP
+  selector:
+    app: pong-app
+  ports:
+    - port: 3456
+      protocol: TCP
+      targetPort: 3000
