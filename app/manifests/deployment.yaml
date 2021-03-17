@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: ssh-nuke-app
-          image: pimpbot9000/ssh-nuke-app:ubuntu        
+          image: pimpbot9000/ssh-nuke-app:ubuntu         

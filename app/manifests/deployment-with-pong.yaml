@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-nuke-deployment
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: the-nuke-app
+  template:
+    metadata:
+      labels:
+        app: the-nuke-app
+    spec:
+      containers:
+        - name: ssh-nuke-app
+          image: pimpbot9000/ssh-nuke-app:ubuntu      
+        - name: pong-app
+          image: pimpbot9000/pong-app:ubuntu
