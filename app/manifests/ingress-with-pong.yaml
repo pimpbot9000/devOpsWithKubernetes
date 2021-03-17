@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ssh-nuke-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ssh-nuke-service
+          servicePort: 2345
+      - path: /pingpong
+        backend:
+          serviceName: pong-service
+          servicePort: 3456
+        

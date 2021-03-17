@@ -50,3 +50,44 @@ Let's see if it works:
 Application afe245f447. Response 6348603466
 ```
 Yay!
+
+## startdate 15.3.2021: Exercise 1.06 & 1.07
+
+There are three different manifest-files
+
+[service-ClusterIP.yaml](app/manifests/service-ClusterIP.yaml), [service-NodePort.yaml](app/manifests/service-NodePort.yaml) 
+and [ingress.yaml](app/manifests/ingress.yaml).
+
+Create cluster and deploy with NodePort:
+```
+k3d cluster create --port '8082:30080@agent[0]' --port '8081:80@loadbalancer' --agents 5
+kubectl apply -f manifests/deployment.yaml
+kubectl apply -f manifests/service-NodePort.yaml
+```
+The port forwarding works as ```8082 -> 30080 -> 8080``` and defined in NodePort-manifest.
+
+Create cluster and deploy with ingress and ClusterIP:
+```
+k3d cluster create --port '8082:30080@agent[0]' --port '1337:80@loadbalancer' --agents 5
+kubectl apply -f manifests/deployment.yaml
+kubectl apply -f manifests/service-ClusterIP.yaml
+kubectl apply -f manifests/ingress.yaml
+```
+Let's check it out:
+```
+> kubectl get svc
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+kubernetes         ClusterIP   10.43.0.1      <none>        443/TCP    63s
+ssh-nuke-service   ClusterIP   10.43.56.218   <none>        2345/TCP   10s
+
+> kubectl get ing
+NAME               CLASS    HOSTS   ADDRESS      PORTS   AGE
+ssh-nuke-ingress   <none>   *       172.29.0.3   80      59s
+
+```
+Port forwarding ``` 1337 -> 80 (ingress? reverse proxy) -> 2345 (ClusterIP) -> 8080 ```.
+I'm so confused!
+
+
+
+
