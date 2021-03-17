@@ -88,6 +88,13 @@ ssh-nuke-ingress   <none>   *       172.29.0.3   80      59s
 Port forwarding ``` 1337 -> 80 (ingress? reverse proxy) -> 2345 (ClusterIP) -> 8080 ```.
 I'm so confused!
 
+## stardate 17.3.2021: Exercise 1.08
+
+Not really understood the task: "Switch to using Ingress instead of NodePort to access the project. You can delete the ingress of the "main application" so they don't interfere with this exercise." ??
+
+## stardate 17.3.2021: Exercise 1.09: Moar Services!
+
+see folder [exercise1_09](exercise1_09) 
 
 
 
