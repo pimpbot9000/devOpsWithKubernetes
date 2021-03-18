@@ -68,7 +68,40 @@ spec:
 
 In addition there are two ClusterIP manifest files.
 
-Applying all of these:
+For App:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssh-nuke-service
+spec:
+  type: ClusterIP
+  selector:
+    app: ssh-nuke-app
+  ports:
+    - port: 2345
+      protocol: TCP
+      targetPort: 8080
+```
+
+For Ping-Pong:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: pong-service
+spec:
+  type: ClusterIP
+  selector:
+    app: pong-app
+  ports:
+    - port: 3456
+      protocol: TCP
+      targetPort: 3000
+```
+
+
+After applying all of these:
 ```
 > curl localhost:1337
 Application 355ca90d8e. Response 0f3883d7e0
