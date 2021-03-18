@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: read-write-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: read-write-pod
+  template:
+    metadata:
+      labels:
+        app: read-write-pod
+    spec:
+      volumes: # Define volume
+        - name: shared-image
+          emptyDir: {}
+      containers:
+        - name: write-app
+          image: pimpbot9000/write-app:latest
+          args: ["/usr/src/app/files/file.txt"]
+          volumeMounts: # Mount volume
+          - name: shared-image
+            mountPath: /usr/src/app/files
+        - name: read-app
+          image: pimpbot9000/read-app:latest
+          args: ["/usr/src/app/files/file.txt"]
+          volumeMounts: # Mount volume
+          - name: shared-image
+            mountPath: /usr/src/app/files          

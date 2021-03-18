@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: the-nuke-pod # this
+        app: the-nuke-pod # ...this
     spec:
       containers:
         - name: ssh-nuke-app
