@@ -1,18 +1,18 @@
 # Logs
 
-## stardate 10.3.2021: Exercise 1.01
+## 10.3.2021: Exercise 1.01
 
 See folder [/exercise1_01](exercise1_01).
 
-## stardate 11.3.2021: Exercise 1.02: Project v0.1
+## 11.3.2021: Exercise 1.02: Project v0.1
 
 The app is found in folder [/app](app) of this repo.
 
-## stardate 11.3.2021: Exercise 1.03 & 1.04
+## 11.3.2021: Exercise 1.03 & 1.04
 
 The manifest-file: [/app/manifests/manifest.yaml](app/manifests/deployment.yaml)
 
-## startdate 11.3.2021: Exercise 1.05
+## 11.3.2021: Exercise 1.05
 
 Create the cluster
 ```
@@ -51,7 +51,7 @@ Application afe245f447. Response 6348603466
 ```
 Yay!
 
-## startdate 15.3.2021: Exercise 1.06 & 1.07
+## 15.3.2021: Exercise 1.06 & 1.07
 
 There are three different manifest-files
 
@@ -88,13 +88,20 @@ ssh-nuke-ingress   <none>   *       172.29.0.3   80      59s
 Port forwarding ``` 1337 -> 80 (ingress? reverse proxy) -> 2345 (ClusterIP) -> 8080 ```.
 I'm so confused!
 
-## stardate 17.3.2021: Exercise 1.08
+## 17.3.2021: Exercise 1.08
 
 Not really understood the task: "Switch to using Ingress instead of NodePort to access the project. You can delete the ingress of the "main application" so they don't interfere with this exercise." ??
 
-## stardate 17.3.2021: Exercise 1.09: Moar Services!
+## 17.3.2021: Exercise 1.09: Moar Services!
 
-see folder [exercise1_09](exercise1_09) 
+See the folder [exercise1_09](exercise1_09).
+
+## 18.3.2021: Exercise 1.10: Even more services (shared *emptyDir* volume)
+
+See the folder [exercise1_10](exercise1_10).
+
+
+
 
 
 
