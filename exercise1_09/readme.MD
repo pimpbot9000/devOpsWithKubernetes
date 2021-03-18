@@ -1,5 +1,7 @@
 # Exercise1_09
 
+This version puts 1 container per pod. 
+
 There are two different deployment.yml files. First for "hash app":
 ```
 apiVersion: apps/v1
