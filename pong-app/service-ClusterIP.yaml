@@ -6,11 +6,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pong-service
+  name: ssh-nuke-service2
 spec:
   type: ClusterIP
   selector:
-    app: pong-app
+    app: the-nuke-pod # This is the app as declared in the deployment.
   ports:
     - port: 3456
       protocol: TCP

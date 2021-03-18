@@ -1,0 +1,10 @@
+FROM python:latest
+WORKDIR /usr/src/app
+COPY read.py .
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+ENTRYPOINT [ "python3", "-u", "read.py" ]
+CMD ["file.txt"]
+
+
+# docker build -t pimpbot9000/read-app:latest -f Dockerfile.read .

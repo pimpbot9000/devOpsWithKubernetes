@@ -1,0 +1,9 @@
+FROM python:latest
+RUN pip install flask && pip install waitress
+WORKDIR /usr/src/app
+COPY write.py .
+ENTRYPOINT [ "python3", "-u", "write.py" ]
+CMD ["file.txt"]
+
+
+# docker build -t pimpbot9000/write-app:latest -f Dockerfile.write .
