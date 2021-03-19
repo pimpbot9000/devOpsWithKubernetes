@@ -1,6 +1,6 @@
 # Exercise 1.11
 
-The whole shebang is deployed by ```deploy.sh```. Good work Darlington!
+The whole shebang is deployed by executing ```deploy.sh```. Good work Darlington!
 
 ```
 docker build -t pimpbot9000/app2:latest -f Dockerfile.app2 .
