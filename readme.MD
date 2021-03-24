@@ -94,12 +94,19 @@ Not really understood the task: "Switch to using Ingress instead of NodePort to 
 
 ## 17.3.2021: Exercise 1.09: Moar Services!
 
-See the folder [exercise1_09](exercise1_09).
+See folder [exercise1_09](exercise1_09).
 
 ## 18.3.2021: Exercise 1.10: Even more services (shared *emptyDir* volume)
 
-See the folder [exercise1_10](exercise1_10).
+See folder [exercise1_10](exercise1_10).
 
+## 18.3.2021: Exercise 1.11: Persisting data
+
+See folder [exercise1_11](exercise1_11).
+
+## 24.3.2021:  Exercise 1.12: Project v0.6
+
+See folder [exercise1_12](exercise1_12).
 
 
 
