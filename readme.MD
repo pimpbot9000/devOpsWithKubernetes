@@ -108,6 +108,10 @@ See folder [exercise1_11](exercise1_11).
 
 See folder [exercise1_12](exercise1_12).
 
+## 24.3.2021:  Exercise 1.13: Project v0.7
+
+See folder [exercise1_13](exercise1_13).
+
 
 
 
