@@ -9,4 +9,4 @@ ENTRYPOINT [ "python3", "-u", "pong2.py" ]
 CMD ["file.txt"]
 
 
-# docker build -t pimpbot9000/pong1-13:latest -f Dockerfile.pong2 .
+# docker build -t pimpbot9000/pong2-01:latest -f Dockerfile.pong2 .

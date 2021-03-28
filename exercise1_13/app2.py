@@ -64,7 +64,7 @@ def download_image(filename):
 if __name__ == "__main__":
     from waitress import serve
 
-    port = 8080
+    port = 7070
     print(sys.argv[1:])
 
     try:

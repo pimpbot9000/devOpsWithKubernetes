@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2-pong2-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app2-pong2-pod
+  template:
+    metadata:
+      labels:
+        app: app2-pong2-pod
+    spec:
+      volumes:
+        - name: shared-image
+          persistentVolumeClaim:
+            claimName: image-claim
+      containers:
+        - name: app2
+          image: pimpbot9000/app2-01:latest
+          args: ["/usr/src/app/static", "http://counter-service/counter"]
+          volumeMounts: # Mount volume
+          - name: shared-image
+            mountPath: /usr/src/app/static
+        - name: pong2
+          image: pimpbot9000/pong2-01:latest
+          args: ["/usr/src/app/static/file.txt"]
+          volumeMounts: # Mount volume
+          - name: shared-image
+            mountPath: /usr/src/app/static
