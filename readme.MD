@@ -1,5 +1,7 @@
 # Logs
 
+# Part 1
+
 ## 10.3.2021: Exercise 1.01
 
 See folder [/exercise1_01](exercise1_01).
@@ -112,7 +114,11 @@ See folder [exercise1_12](exercise1_12).
 
 See folder [exercise1_13](exercise1_13).
 
+# Part 2
 
+## 28.3.2021: Exercise 2.01: Connecting pods
+
+See folder [exercise2_01](exercise2_01)
 
 
 
