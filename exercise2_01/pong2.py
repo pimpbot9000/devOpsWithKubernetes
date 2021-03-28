@@ -11,15 +11,19 @@ filename = "file.txt"
 
 app = Flask(__name__)
 
+@app.route('/counter', methods=['GET'])
+def get_count():
+    counter = read()
+    return Response(str(counter), status=200)
 
 @app.route('/', methods=['GET'])
 def root():
 
     counter = read()
+    counter = int(counter) + 1
+    response_str = 'I have been ponged {counter} times!'.format(counter=counter)   
     
-    response_str = 'pong {counter}'.format(counter=counter)   
-    
-    write(str(int(counter) + 1))
+    write(str(counter))
 
     return Response(response_str, status=200)
 

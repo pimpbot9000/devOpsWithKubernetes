@@ -7,12 +7,13 @@ import os
 
 # global hash
 hs = ""
-filename = "" # counter for pong-app
 timestamp_filename = ""
 image_filename = ""
 path = ""
 app = Flask(__name__)
-
+pong_url = ""
+todos = ["Do", "something", "today", "...or", "manana!"]
+counter_url = ""
 
 @app.route('/', methods=['GET'])
 def root():
@@ -25,14 +26,11 @@ def root():
         download_image(image_filename)
         write_timestamp()
     
-    return render_template("index.html", message="Hello Flask!", hs=hs, response_hash=response_hash, counter=counter, timestamp=timestamp)
+    return render_template("index.html", hs=hs, response_hash=response_hash, counter=counter, timestamp=timestamp, todos=todos)
 
 def read_counter():
-    try:
-        f = open(filename, "r")
-        count = f.read()
-        f.close()
-        return count
+    try:        
+        return requests.get(counter_url).content.decode("utf-8") 
     except:
         return 0
 
@@ -63,11 +61,14 @@ def download_image(filename):
 if __name__ == "__main__":
     from waitress import serve
 
-    port = 8080
-    print(sys.argv[1:])
-
+    port = 7070
+    args = sys.argv[1:]
+    print(args)
+    # args: path pong-url
     try:
-        path = sys.argv[1:][0]
+        path = args[0]
+        #"http://counter-service/counter"
+        counter_url = args[1]
         filename = os.path.join(path, "file.txt")
         image_filename = os.path.join(path, "image.jpg")
         timestamp_filename = os.path.join(path, "timestamp.txt")
