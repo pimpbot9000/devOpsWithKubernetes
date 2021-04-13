@@ -1,0 +1,8 @@
+resources:
+  - deployment.yaml
+  - ingress.yaml
+  - persistent-claim.yaml
+  - persistent-volume.yaml
+  - service-app2.yaml
+  - service-pong2.yaml
+  - service-pong2-counter.yaml
