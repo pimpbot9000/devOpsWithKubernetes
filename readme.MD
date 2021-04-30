@@ -120,5 +120,11 @@ See folder [exercise1_13](exercise1_13).
 
 See folder [exercise2_01](exercise2_01)
 
+## 13.4.2021: Exercise 2.02:
 
+See folder [exercise2_01](exercise2_02)
+
+## 30.4.2021: Exercise 2.03 & 2.04: Namespaces
+
+See folder [exercise2_03 and 2_04](exercise2_03%20and%202_04)
 
