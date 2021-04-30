@@ -15,6 +15,11 @@ app = Flask(__name__)
 pong_url = ""
 counter_url = ""
 
+@app.route('/health')
+def health():
+    print("Health check!")
+    return "I'm healthy"
+
 @app.route('/', methods=['GET'])
 def root():
 
