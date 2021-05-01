@@ -1,0 +1,12 @@
+FROM python:latest
+WORKDIR /usr/src/app
+RUN mkdir static
+COPY pong2.py .
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+EXPOSE 6060
+ENTRYPOINT [ "python3", "-u", "pong2.py" ]
+CMD ["file.txt"]
+
+
+# docker build -t pimpbot9000/pong2-01:latest -f Dockerfile.pong2 .

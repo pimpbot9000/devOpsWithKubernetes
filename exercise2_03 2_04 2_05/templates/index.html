@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App - The App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <h3>Exercise 2.02</h3>
+    <p>Message from ConfigMap: {{ message }}</p>
+    <p>App hash: {{ hs }}</p>
+    <p>Response hash: {{ response_hash }}</p>
+    <p>Counter: {{ counter }}</p>
+    <p>Image timestamp: {{ timestamp }}</p>
+    <img src="static/image.jpg" width="300px" />
+
+
+  </div>
+  <div>
+    <form id="todo-form">
+      <input type="text" name="todo" id="todo" maxlength="10" id="todo-form" /><br />
+      <input type="submit" value="Click me">
+    </form>
+    <ul id="list">
+      {% for todo in todos %}
+      <li>{{ todo }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <script>
+
+    const render = (data) => {
+      let rows = ""
+
+      data.forEach(element => {
+        const row = `<li>${element}</li>`
+        rows += row
+      })
+
+      $("#list").html(rows)
+    }
+
+    const getData = () => {
+      axios.get("/api/todos").then(
+        response => {
+          render(response.data)
+        }
+      ).catch(error => { console.log(error) })
+    }
+
+    $("#todo-form").submit((evt) => {
+
+      evt.preventDefault()
+      const data = getFormData('#todo-form')
+      postFormData(data)
+
+    })
+
+    const postFormData = (payload) => {
+      const payLoad = payload
+      axios.post('/api/todos', payLoad)
+        .then(response => {
+          getData()
+        })
+    }
+
+    // helper method to get form data as JSON
+    const getFormData = (id) => {
+      const data = $(id).serializeArray().reduce((obj, item) => {
+        obj[item.name] = item.value;
+        return obj;
+      }, {})
+      return data
+    }
+
+    $(document).ready(() => {
+      //getData()
+    })
+
+  </script>
+</body>
+
+</html>
