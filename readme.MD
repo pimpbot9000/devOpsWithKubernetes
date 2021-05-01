@@ -126,5 +126,5 @@ See folder [exercise2_01](exercise2_02)
 
 ## 30.4.2021: Exercise 2.03, 2.04 and 2.06: Namespaces and configmap
 
-See folder [exercise2_03 2_04 2_05](exercise2_03%202_04%202_05)
+See folder [exercise2_03 2_04 2_06](exercise2_03%202_04%202_06)
 
