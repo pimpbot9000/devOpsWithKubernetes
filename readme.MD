@@ -124,7 +124,7 @@ See folder [exercise2_01](exercise2_01)
 
 See folder [exercise2_01](exercise2_02)
 
-## 30.4.2021: Exercise 2.03 & 2.04: Namespaces
+## 30.4.2021: Exercise 2.03, 2.04 and 2.05: Namespaces and configmap
 
-See folder [exercise2_03 and 2_04](exercise2_03%20and%202_04)
+See folder [exercise2_03 2_04 2_05](exercise2_03%202_04%202_05)
 
