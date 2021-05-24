@@ -1,4 +1,14 @@
-# Exercise 2.03 & 2.04 & 2.06
+# Exercise 2.07 & 2.08 & 2.09
 
-Added the deployment into a namspace ```project```. 
-Add a configmap for environment variable MESSAGE (2.06)
+## 2.07
+Pong app connects to Postgresql database and saves a pong timestamp when pingponged.
+
+## 2.08
+Memory-backend (stupid name now) connects to Postgresql database and saves todos.
+
+## 2.09
+CronJob named reminder adds a new random wikipedia article link every day at 8 am.
+
+## Note
+
+The whole shebang can be upped running the ```deploy.sh``` script. 
