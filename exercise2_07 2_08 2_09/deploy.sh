@@ -1,3 +1,6 @@
+docker build -t pimpbot9000/reminder:1.00 -f cronjob/Dockerfile cronjob
+docker push pimpbot9000/reminder:1.00
+
 docker build -t pimpbot9000/app2-07:latest -f app/Dockerfile app
 docker push pimpbot9000/app2-07:latest
 

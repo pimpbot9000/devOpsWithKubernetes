@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: reminder
+  namespace: project
+spec:  
+  schedule: "*/1 * * * *"
+  jobTemplate:  
+    spec:
+      template:
+        spec:
+          containers:
+          - name: reminder
+            image: pimpbot9000/reminder:1.01
+          restartPolicy: OnFailure

@@ -50,7 +50,7 @@ spec:
               configMapKeyRef:
                 name: dotenv
                 key: POSTGRES_DB
-                                               
+                                                               
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgres-volume

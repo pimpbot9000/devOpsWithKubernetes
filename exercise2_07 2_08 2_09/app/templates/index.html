@@ -62,8 +62,7 @@
 
     })
 
-    const postFormData = (payload) => {
-      const payLoad = payload
+    const postFormData = (payload) => {      
       axios.post('/api/todos', payLoad)
         .then(response => {
           getData()
@@ -76,11 +75,12 @@
         obj[item.name] = item.value;
         return obj;
       }, {})
+      console.log(data)
       return data
     }
 
     $(document).ready(() => {
-      //getData()
+      // do nothing, the data is rendered initially by the backend
     })
 
   </script>
