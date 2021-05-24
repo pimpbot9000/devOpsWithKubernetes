@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-svc
+  namespace: project
+  labels:
+    app: postgres
+spec:
+  ports:
+  - port: 5432
+    name: postgres
+  clusterIP: None
+  selector:
+    app: postgres-app
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres-ss
+  namespace: project
+spec:
+  serviceName: postgres-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-app
+  template:
+    metadata:
+      labels:
+        app: postgres-app
+    spec:
+      containers:        
+        - name: postgres
+          image: postgres:13.2
+          ports:
+            - containerPort: 5432
+          env:          
+          - name: POSTGRES_PASSWORD                                     
+            valueFrom:
+              configMapKeyRef:
+                name: dotenv
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_USER                                     
+            valueFrom:
+              configMapKeyRef:
+                name: dotenv
+                key: POSTGRES_USER
+          - name: POSTGRES_DB                                     
+            valueFrom:
+              configMapKeyRef:
+                name: dotenv
+                key: POSTGRES_DB
+                                               
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgres-volume
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-volume
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: local-path
+        resources:
+          requests:
+            storage: 100Mi
