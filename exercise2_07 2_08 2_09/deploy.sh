@@ -1,5 +1,5 @@
-docker build -t pimpbot9000/reminder:1.00 -f cronjob/Dockerfile cronjob
-docker push pimpbot9000/reminder:1.00
+docker build -t pimpbot9000/reminder:1.01 -f cronjob/Dockerfile cronjob
+docker push pimpbot9000/reminder:1.01
 
 docker build -t pimpbot9000/app2-07:latest -f app/Dockerfile app
 docker push pimpbot9000/app2-07:latest
@@ -26,6 +26,7 @@ kubectl apply -f manifests/service-backend-internal.yaml
 kubectl apply -f manifests/service-app2.yaml
 kubectl apply -f manifests/service-pong2.yaml
 kubectl apply -f manifests/service-pong2-counter.yaml
+kubectl apply -f manifests/cronjob.yaml
 
 # run these manually for some reason, i guess the controller takes time to start
 # kubeseal --scope cluster-wide -o yaml <manifests/secret.yaml > manifests/sealedsecret.yaml
